@@ -1,12 +1,14 @@
 {
-    "version": "1.0.0",
+    "version": "1.0.1",
     "summary": "a collection of functions for a tuple with the same Type for both elements",
     "repository": "https://github.com/Orasund/elm-pair.git",
     "license": "BSD3",
     "source-directories": [
         "src"
     ],
-    "exposed-modules": ["Pair"],
+    "exposed-modules": [
+        "Pair"
+    ],
     "dependencies": {
         "elm-lang/core": "5.0.0 <= v < 6.0.0"
     },
