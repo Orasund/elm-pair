@@ -1,4 +1,4 @@
-module Pair exposing (Pair, foldl, foldr, map, map2)
+module Pair exposing (Pair, foldl, foldr, map, map2, toList)
 
 {-| These functions where created for Tuples where both values have the same type, for example 2D-coordinates.
 
@@ -10,7 +10,7 @@ module Pair exposing (Pair, foldl, foldr, map, map2)
 
 ## Functions
 
-@docs foldl, foldr, map, map2
+@docs foldl, foldr, map, map2, toList
 
 -}
 
@@ -45,6 +45,8 @@ map2 fun ( a, b ) ( c, d ) =
 
     foldl (//) 1 (1,2) == 2
 
+    foldl (::) [] (1,2) == [2,1]
+
 -}
 foldl : (a -> b -> b) -> b -> Pair a -> b
 foldl fun c ( a, b ) =
@@ -55,7 +57,19 @@ foldl fun c ( a, b ) =
 
     foldr (//) 1 (1,2) == 0
 
+    foldr (::) [] (1,2) == [1,2]
+
 -}
 foldr : (a -> b -> b) -> b -> Pair a -> b
 foldr fun c ( a, b ) =
     fun a <| fun b c
+
+
+{-| returns a list with both elements
+
+    toList(1,2) == foldr (::) [] (1,2)
+
+-}
+toList : Pair a -> List a
+toList ( a, b ) =
+    [ a, b ]

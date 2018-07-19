@@ -25,4 +25,16 @@ suite =
             \_ ->
                 Pair.foldr (//) 1 ( 1, 2 )
                     |> Expect.equal 0
+        , test "foldr (::) [] (1,2) == [1,2]" <|
+            \_ ->
+                Pair.foldr (::) [] ( 1, 2 )
+                    |> Expect.equal [ 1, 2 ]
+        , test "foldl (::) [] (1,2) == [2,1]" <|
+            \_ ->
+                Pair.foldl (::) [] ( 1, 2 )
+                    |> Expect.equal [ 2, 1 ]
+        , test "toList(1,2) == foldr (::) [] (1,2)" <|
+            \_ ->
+                Pair.toList ( 1, 2 )
+                    |> Expect.equal (Pair.foldr (::) [] ( 1, 2 ))
         ]
