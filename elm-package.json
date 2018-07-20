@@ -1,6 +1,6 @@
 {
-    "version": "1.1.0",
-    "summary": "a collection of functions for a tuple with the same Type for both elements",
+    "version": "1.2.0",
+    "summary": "a collection of functions for (a,b) and (a,a) tuples",
     "repository": "https://github.com/Orasund/elm-pair.git",
     "license": "BSD3",
     "source-directories": [
@@ -8,6 +8,7 @@
     ],
     "exposed-modules": [
         "Pair"
+        , "Tuple.Extra"
     ],
     "dependencies": {
         "elm-lang/core": "5.0.0 <= v < 6.0.0"
