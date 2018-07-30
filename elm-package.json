@@ -1,5 +1,5 @@
 {
-    "version": "1.2.0",
+    "version": "1.2.1",
     "summary": "a collection of functions for (a,b) and (a,a) tuples",
     "repository": "https://github.com/Orasund/elm-pair.git",
     "license": "BSD3",
